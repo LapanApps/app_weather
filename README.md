@@ -1,6 +1,16 @@
 # app_weather
 
-A new Flutter project.
+UI inspired from:
+![IMAGE](https://imgur.com/GQ2JHZJ.png)
+
+In this module, we'll learn:
+
+- [Stack](https://api.flutter.dev/flutter/widgets/Stack-class.html) widget
+- Colour and themes
+- Using [Google fonts](https://fonts.google.com/)
+- TextStyle(s)
+- Card [shapes border](https://api.flutter.dev/flutter/painting/ShapeBorder-class.html)
+- etc.
 
 ## Getting Started
 

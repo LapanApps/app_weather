@@ -5,11 +5,12 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var weather = ['Wind', 'Humidity', 'Pressure', 'Sunrise', 'Sunset'];
     return Scaffold(
       backgroundColor: Colors.purple.shade100,
       appBar: AppBar(
-        title: Text('Kuala Lumpur'),
-        leading: Icon(Icons.apartment),
+        title: const Text('Kuala Lumpur'),
+        leading: const Icon(Icons.apartment),
         centerTitle: true,
         backgroundColor: Colors.purple.shade100,
         foregroundColor: Colors.black,
@@ -20,15 +21,15 @@ class Home extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              bottom: 40,
+              bottom: 50,
               left: 10,
               right: 10,
               child: Container(
-                height: 230,
-                width: 230,
-                decoration: BoxDecoration(
+                height: 300,
+                width: 300,
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.white,
+                  color: Color(0xffe8b0ae),
                 ),
               ),
             ),
@@ -38,24 +39,41 @@ class Home extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: 20),
-                  Text(
+                  const SizedBox(height: 20),
+                  const Text(
                     'Monday, Sunny',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w100,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   const Icon(
                     Icons.wb_sunny_outlined,
-                    size: 60,
+                    size: 100,
                   ),
-                  SizedBox(height: 20),
-                  const Text(
-                    '45°',
-                    style: TextStyle(fontSize: 72),
+                  const SizedBox(height: 20),
+                  Card(
+                    // elevation: 10,
+                    shape: BeveledRectangleBorder(
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: const Text(
+                        '45°',
+                        style: TextStyle(fontSize: 72),
+                      ),
+                    ),
                   ),
+                  const SizedBox(height: 20),
+                  for (var i = 0; i < weather.length; i++)
+                    ListTile(
+                      title: Text(weather[i]),
+                      leading: Icon(Icons.wb_sunny),
+                      dense: true,
+                      visualDensity: VisualDensity.compact,
+                    ),
                 ],
               ),
             ),
